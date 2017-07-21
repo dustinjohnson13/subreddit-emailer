@@ -1,0 +1,13 @@
+service: reddit
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  newRedditPost:
+    handler: handler.newRedditPost
+    events:
+      - http:
+          path: reddit/newpost
+          method: post
